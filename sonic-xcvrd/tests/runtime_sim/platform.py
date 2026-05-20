@@ -13,13 +13,15 @@ object directly.
 
 from __future__ import annotations
 
+from typing import Optional
+
 from .chassis import MockChassis
 
 
 class Platform:
     """Returns a singleton :class:`MockChassis`."""
 
-    _chassis: MockChassis = None
+    _chassis: Optional[MockChassis] = None
 
     def __init__(self, start_control_server: bool = False) -> None:
         if Platform._chassis is None:
